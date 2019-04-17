@@ -17,7 +17,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });
 
 function insert() {
-  chrome.browserAction.setBadgeText({text:"&#8634;"});
+  chrome.browserAction.setBadgeText({text:"sync"});
   fetch(insertUrl).then(function () {
     chrome.browserAction.setBadgeText({text:""});
   }
