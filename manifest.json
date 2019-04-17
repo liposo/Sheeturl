@@ -2,14 +2,14 @@
   "name": "Sheeturl",
   "version": "1.0",
   "description": "Save Current page URL in a Google Sheet",
-  "permissions": ["activeTab",
-    "https://*.google.com/"
-  ],
+  "permissions": ["activeTab", "https://*.google.com/"],
   "browser_action": {
     "default_icon": "icon.png"
   },
   "background": {
     "scripts": ["background.js"]
   },
-  "manifest_version": 2
+  "options_page": "options.html",
+  "manifest_version": 2,
+  "content_security_policy":"script-src 'self' https://*.google.com; object-src 'self'"
 }
