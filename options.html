@@ -1,19 +1,23 @@
 <html>
-<head>
-	<title>SheetURL settings</title>
-	
-</head>
-<body>
-	<label for="scriptUrl">Google Script URL</label>
-	<input id="scriptUrl" name="scriptUrl" type="text"/>
-	<label for="sheetUrl">Google Sheet public URL</label>
-	<input id="sheetUrl" name="sheetUrl" type="text"/>
-	<label for="sheetName">Sheet Name</label>
-	<input id="sheetName" name="sheetName" type="text"/>
-	<button id="save-options">Save</button>
-	<hr>
-	<h3>SheetURL - links</h3>
-    <ul id="link-list"></ul>
-	<script type="text/javascript" src="options.js"></script>
-</body>
+  <head>
+    <title>SheetURL settings</title>
+  </head>
+  <body>
+    <section id="urls-inputs">
+      <label for="scriptUrl">Google Script URL</label>
+      <input id="scriptUrl" name="scriptUrl" type="text" />
+      <label for="sheetUrl">Google Sheet public URL</label>
+      <input id="sheetUrl" name="sheetUrl" type="text" />
+      <label for="sheetName">Sheet Name</label>
+      <input id="sheetName" name="sheetName" type="text" />
+      <button id="save-options">Save</button>
+    </section>
+    <hr />
+    <section id="linkList">
+      <h3>SheetURL - links</h3>
+      <ul id="link-list"></ul>
+    </section>
+
+    <script type="text/javascript" src="options.js"></script>
+  </body>
 </html>

@@ -1,9 +1,9 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.browserAction.onClicked.addListener(function(tab) {
   var url = tab.url;
   var title = tab.title;
 
   insertUrl =
-  localStorage["scriptUrl"] +
+    localStorage["scriptUrl"] +
     "?action=insert&title=" +
     title +
     "&url=" +
@@ -13,11 +13,13 @@ chrome.browserAction.onClicked.addListener(function (tab) {
     "&sheetName=" +
     localStorage["sheetName"];
 
-    insert();
+  insert();
 });
 
 function insert() {
-  fetch(insertUrl).then(response => console.log("Insert:" + response.status));
+  chrome.browserAction.setBadgeText({text:"&#8634;"});
+  fetch(insertUrl).then(function () {
+    chrome.browserAction.setBadgeText({text:""});
+  }
+  );
 }
-
-
