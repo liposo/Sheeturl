@@ -9,7 +9,10 @@ How to use this (at its current state):
 
 2. Go to https://script.google.com/home/start and create a new script. (copy and paste the code from the following Gist)
 
+    (I used a secondary Google account for this)
+    
     The code for this script : [Google Script used to write the values in the sheet](https://gist.github.com/liposo/19978792ffa0576e0266d9cb1603ca25)
+
 
 3. Publish > Deploy as a web app. Save the link for this script.
 
