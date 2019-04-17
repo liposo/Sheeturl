@@ -7,19 +7,13 @@ How to use this (at its current state):
 
 1. Download or clone this repository
 
-2. Go to https://script.google.com/home/start and create a new script. (copy and paste the code from the following Gist)
+2. Create a Google sheet and share it, make the permissions like in the image
+    ![alt text][logo]
 
-    (I used a secondary Google account for this)
-    
-    The code for this script : [Google Script used to write the values in the sheet](https://gist.github.com/liposo/19978792ffa0576e0266d9cb1603ca25)
-
-
-3. Publish > Deploy as a web app. Save the link for this script.
-
-4. Create a Google sheet and share it publicly (permission to edit). Save the address.
+    [logo]: /img/link-sharing.png "Link-sharing"
 
 6. Go to Chome > Extensions (chrome://extensions/) and enable developer mode, click on Load unpacked and select the folder of this extension.
 
-7. Right-click the extension icon and open the options page, place the URLs and the sheet name in the input field and click on save. 
+7. Right-click the extension icon and open the options page, place the URL and the sheet name in the input fields and click on save. 
 
-8. Now when the extension is clicked the tab title and URL will be saved in that sheet, saved URLs can be seen in the options page.
+8. Now when the extension icon is clicked the tab title and URL will be saved in that sheet, saved URLs can be seen in the options page.

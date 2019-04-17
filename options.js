@@ -1,12 +1,12 @@
-var linkList = document.querySelector('#link-list');
+var linkList = document.querySelector("#link-list");
+var gScriptUrl =
+  "https://script.google.com/macros/s/AKfycbxmlPDQHBSTcrBHKlin3-8-K-m3BYdgKjWWZBNXKkKK2jEIEuZF/exec";
 
 window.addEventListener("load", function() {
   if (
-    localStorage["scriptUrl"] &&
     localStorage["sheetUrl"] &&
     localStorage["sheetName"]
   ) {
-    document.getElementById("scriptUrl").value = localStorage["scriptUrl"];
     document.getElementById("sheetUrl").value = localStorage["sheetUrl"];
     document.getElementById("sheetName").value = localStorage["sheetName"];
 
@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
   } else {
     var message = document.createElement("p");
     message.setAttribute("id", "alert-message");
-    message = "URLs or sheet name are missing";
+    message = "URL or sheet name are missing";
 
     document.querySelector("#urls-inputs").append(message);
   }
@@ -24,26 +24,36 @@ document.querySelector("#save-options").addEventListener("click", function() {
   saveOptions();
 });
 
+document.querySelector("#refresh").addEventListener("click", function () {
+  var children = Array.prototype.slice.call(linkList.children);
+  
+  children.forEach((element) => {
+    element.remove();
+  });
+
+  read();
+});
+
 function saveOptions() {
-  var scriptUrl = document.getElementById("scriptUrl").value;
   var sheetUrl = document.getElementById("sheetUrl").value;
   var sheetName = document.getElementById("sheetName").value;
 
-  if (scriptUrl && sheetUrl && sheetName) {
-    localStorage["scriptUrl"] = scriptUrl;
+  if (sheetUrl && sheetName) {
     localStorage["sheetUrl"] = sheetUrl;
     localStorage["sheetName"] = sheetName;
 
     var alert = document.querySelector("#alert-message");
-    document.querySelector("#urls-inputs").removeChild(alert);
+    if (alert) {
+      document.querySelector("#urls-inputs").removeChild(alert);
+    }
   }
 
-  window.close()
+  window.close();
 }
 
 async function read() {
   var readUrl =
-    localStorage["scriptUrl"] +
+    gScriptUrl +
     "?action=read&sheetUrl=" +
     localStorage["sheetUrl"] +
     "&sheetName=" +
@@ -60,12 +70,12 @@ async function read() {
 
 function createListItem(element) {
   var listItem = document.createElement("li");
-  var itemTitle = document.createElement("h4");
+  var itemTitle = document.createElement("h2");
   var itemUrl = document.createElement("a");
 
   itemTitle.innerHTML = element.title;
   itemUrl.innerHTML = element.url;
-  itemUrl.setAttribute("src", element.url);
+  itemUrl.setAttribute("href", element.url);
 
   listItem.appendChild(itemTitle);
   listItem.appendChild(itemUrl);

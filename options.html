@@ -1,20 +1,29 @@
 <html>
   <head>
-    <title>SheetURL settings</title>
+	<title>SheetURL settings</title>
+	<link rel="stylesheet" href="options.css"/>
   </head>
   <body>
-    <section id="urls-inputs">
-      <label for="scriptUrl">Google Script URL</label>
-      <input id="scriptUrl" name="scriptUrl" type="text" />
-      <label for="sheetUrl">Google Sheet public URL</label>
-      <input id="sheetUrl" name="sheetUrl" type="text" />
-      <label for="sheetName">Sheet Name</label>
-      <input id="sheetName" name="sheetName" type="text" />
+    <header>
+      <h1 class="title">SheetURL</h1>
+      <a href="https://github.com/liposo/Sheeturl">GitHub</a>
+    </header>
+
+    <section class="inputs" id="urls-inputs">
+      <div>
+        <label for="sheetUrl">Google Sheet public URL</label>
+        <input id="sheetUrl" name="sheetUrl" type="text" />
+      </div>
+      <div>
+        <label for="sheetName">Sheet Name</label>
+        <input id="sheetName" name="sheetName" type="text" />
+      </div>
       <button id="save-options">Save</button>
     </section>
-    <hr />
-    <section id="linkList">
-      <h3>SheetURL - links</h3>
+
+	<section id="linkList">
+	  <h1 class="savedLinks">Saved links</h1>
+	  <i id="refresh" class="refresh">&#x21bb;</i>
       <ul id="link-list"></ul>
     </section>
 
