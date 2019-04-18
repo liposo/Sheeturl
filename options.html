@@ -1,29 +1,30 @@
 <html>
   <head>
-	<title>SheetURL settings</title>
-	<link rel="stylesheet" href="options.css"/>
+    <title>SheetURL settings</title>
+    <link rel="stylesheet" href="options.css" />
   </head>
   <body>
     <header>
-      <h1 class="title">SheetURL</h1>
-      <a href="https://github.com/liposo/Sheeturl">GitHub</a>
+      <div class="title-wrapper">
+        <h1 class="title">SheetURL</h1>
+        <a href="https://github.com/liposo/Sheeturl">GitHub</a>
+      </div>
+      <div class="inputs">
+        <div>
+          <label for="sheetUrl">Google Sheet public URL</label>
+          <input id="sheetUrl" name="sheetUrl" type="text" />
+        </div>
+        <div>
+          <label for="sheetName">Sheet Name</label>
+          <input id="sheetName" name="sheetName" type="text" />
+        </div>
+        <button id="save-options">Save</button>
+      </div>
     </header>
 
-    <section class="inputs" id="urls-inputs">
-      <div>
-        <label for="sheetUrl">Google Sheet public URL</label>
-        <input id="sheetUrl" name="sheetUrl" type="text" />
-      </div>
-      <div>
-        <label for="sheetName">Sheet Name</label>
-        <input id="sheetName" name="sheetName" type="text" />
-      </div>
-      <button id="save-options">Save</button>
-    </section>
-
-	<section id="linkList">
-	  <h1 class="savedLinks">Saved links</h1>
-	  <i id="refresh" class="refresh">&#x21bb;</i>
+    <section id="linkList">
+      <h1 class="savedLinks">Saved links</h1>
+      <i id="refresh" class="refresh">&#x21bb;</i>
       <ul id="link-list"></ul>
     </section>
 
