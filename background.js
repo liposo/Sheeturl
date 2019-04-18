@@ -1,6 +1,10 @@
 var gScriptUrl =
   "https://script.google.com/macros/s/AKfycbxmlPDQHBSTcrBHKlin3-8-K-m3BYdgKjWWZBNXKkKK2jEIEuZF/exec";
 
+  chrome.runtime.onInstalled.addListener(function () {
+  chrome.tabs.create({url: "options.html"}); 
+});
+
 chrome.browserAction.onClicked.addListener(function(tab) {
   var url = tab.url;
   var title = tab.title;

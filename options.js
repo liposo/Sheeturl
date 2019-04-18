@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
     message.setAttribute("id", "alert-message");
     message = "URL or sheet name are missing";
 
-    document.querySelector("#urls-inputs").append(message);
+    document.querySelector(".inputs").append(message);
   }
 });
 
