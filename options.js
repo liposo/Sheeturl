@@ -62,10 +62,12 @@ async function read() {
   let response = await fetch(readUrl);
   let body = await response.json();
 
-  body.forEach(element => {
-    var listItem = createListItem(element);
-    linkList.appendChild(listItem);
-  });
+  if(Object.keys(body).length){
+    body.forEach(element => {
+      var listItem = createListItem(element);
+      linkList.appendChild(listItem);
+    });
+  } 
 }
 
 function createListItem(element) {
