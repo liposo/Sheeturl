@@ -3,6 +3,8 @@ The idea behind this extension was to be able to quickly save links without havi
 
 The story behind: I don't like to use my personal accounts at work and there are so many links I come across that I want to save and look it later.  
 
+[Google Script](https://gist.github.com/liposo/19978792ffa0576e0266d9cb1603ca25) used to write and read values in the Google Sheet.
+
 How to use this (at its current state):
 
 1. Download or clone this repository
