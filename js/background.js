@@ -2,7 +2,7 @@ var gScriptUrl =
   "https://script.google.com/macros/s/AKfycbxmlPDQHBSTcrBHKlin3-8-K-m3BYdgKjWWZBNXKkKK2jEIEuZF/exec";
 
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.tabs.create({ url: "options.html" });
+  chrome.tabs.create({ url: "/html/start.html" });
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
@@ -12,9 +12,9 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   insertUrl =
     gScriptUrl +
     "?action=insert&title=" +
-    title +
+    escape(title) +
     "&url=" +
-    url +
+    escape(url) +
     "&sheetUrl=" +
     localStorage["sheetUrl"] +
     "&sheetName=" +
@@ -25,6 +25,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
 function insert() {
   chrome.browserAction.setBadgeText({ text: "sync" });
+  chrome.browserAction.setBadgeBackgroundColor({ color: "#01BAEF" });
   fetch(insertUrl)
     .then(function(response) {
       return response.json();

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link type="text/css" rel="stylesheet" href="/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/css/options.css" />
+
+    <title>SheetURL settings</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-container">
+        <div class="logo">
+          <a href="https://github.com/liposo/Sheeturl"
+            ><img src="/assets/icons/icon128.png"
+          /></a>
+        </div>
+
+        <div class="setup-container">
+          <div>
+            <h1>SheetURL options</h1>
+            <input
+              id="sheetUrl"
+              type="text"
+              placeholder="Link to your Google Sheet"
+              required
+            />
+            <input
+              id="sheetName"
+              type="text"
+              placeholder="Sheet name"
+              required
+            />
+          </div>
+
+          <button id="saveButton">Save</button>
+        </div>
+      </div>
+      <div class="links-container">
+        <div class="refresh-wrapper">
+          <h1 class="savedLinks">Saved links</h1>
+          <span id="refresh" class="refresh-icon spin">&#x21bb;</span>
+        </div>
+        <ul id="link-list"></ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/options.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+  </body>
+</html>

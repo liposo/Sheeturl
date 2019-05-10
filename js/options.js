@@ -1,4 +1,5 @@
 var linkList = document.querySelector("#link-list");
+var refresh = document.querySelector("#refresh");
 var gScriptUrl =
   "https://script.google.com/macros/s/AKfycbxmlPDQHBSTcrBHKlin3-8-K-m3BYdgKjWWZBNXKkKK2jEIEuZF/exec";
 
@@ -20,11 +21,9 @@ window.addEventListener("load", function() {
   }
 });
 
-document.querySelector("#save-options").addEventListener("click", function() {
-  saveOptions();
-});
-
-document.querySelector("#refresh").addEventListener("click", function () {
+refresh.addEventListener("click", function () {
+  refresh.classList.add('spin');
+  
   var children = Array.prototype.slice.call(linkList.children);
   
   children.forEach((element) => {
@@ -33,23 +32,6 @@ document.querySelector("#refresh").addEventListener("click", function () {
 
   read();
 });
-
-function saveOptions() {
-  var sheetUrl = document.getElementById("sheetUrl").value;
-  var sheetName = document.getElementById("sheetName").value;
-
-  if (sheetUrl && sheetName) {
-    localStorage["sheetUrl"] = sheetUrl;
-    localStorage["sheetName"] = sheetName;
-
-    var alert = document.querySelector("#alert-message");
-    if (alert) {
-      document.querySelector("#urls-inputs").removeChild(alert);
-    }
-  }
-
-  window.close();
-}
 
 async function read() {
   var readUrl =
@@ -63,6 +45,9 @@ async function read() {
   let body = await response.json();
 
   if(Object.keys(body).length){
+    
+    refresh.classList.remove('spin');
+
     body.forEach(element => {
       var listItem = createListItem(element);
       linkList.appendChild(listItem);
@@ -72,15 +57,18 @@ async function read() {
 
 function createListItem(element) {
   var listItem = document.createElement("li");
-  var itemTitle = document.createElement("h2");
-  var itemUrl = document.createElement("a");
+  var title = document.createElement("h2");
+  var link = document.createElement("a");
+  var urlSpan = document.createElement("span"); 
 
-  itemTitle.innerHTML = element.title;
-  itemUrl.innerHTML = element.url;
-  itemUrl.setAttribute("href", element.url);
+  title.innerHTML = element.title;
+  urlSpan.innerHTML = element.url;
 
-  listItem.appendChild(itemTitle);
-  listItem.appendChild(itemUrl);
+  link.appendChild(title);
+  link.appendChild(urlSpan);
+  link.setAttribute("href", element.url);
+
+  listItem.appendChild(link);
 
   return listItem;
 }

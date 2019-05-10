@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link type="text/css" rel="stylesheet" href="/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="/css/start.css" />
+
+    <title>Initial Setup</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="intructions-container">
+        <h1>SheetURL</h1>
+        <img src="/assets/icons/icon128.png" />
+        <p>Quickly save your current tab link</p>
+        <h2>Before start using this extension:</h2>
+        <p>
+          Create or select a Google Sheet and share it with edit previleges.<br />You
+          can select for only those whith the link are able to view/edit.
+        </p>
+      </div>
+      <div class="setup-container">
+        <h1>Setup</h1>
+        <span><i>The Sheet name is in the bottom</i></span>
+          <input
+            id="sheetUrl"
+            type="text"
+            placeholder="Link to your Google Sheet"
+            required
+          />
+          <input id="sheetName" type="text" placeholder="Sheet name" required />
+          <button id="saveButton">Save</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/common.js"></script>
+  </body>
+</html>

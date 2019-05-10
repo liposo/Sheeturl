@@ -1,5 +1,6 @@
 # Sheeturl
-The idea behind this extension was to be able to quickly save links without having to log in into some system. It's is not meant to be a bookmark manager. 
+The idea is to be able to quickly save links without having to log in into some system. 
+It's is not meant to be a bookmark manager. 
 
 The story behind: I don't like to use my personal accounts at work and there are so many links I come across that I want to save and look it later.  
 
@@ -12,10 +13,8 @@ How to use this (at its current state):
 2. Create a Google sheet and share it, make the permissions like in the image
     ![alt text][logo]
 
-    [logo]: /img/link-sharing.png "Link-sharing"
+    [logo]: assets/img/link-sharing.png "Link-sharing"
 
-6. Go to Chome > Extensions (chrome://extensions/) and enable developer mode, click on Load unpacked and select the folder of this extension.
+6. Go to Chome > Extensions (chrome://extensions/) and enable developer mode, click on Load unpacked and select the folder of this repository.
 
-7. Right-click the extension icon and open the options page, place the URL and the sheet name in the input fields and click on save. 
-
-8. Now when the extension icon is clicked the tab title and URL will be saved in that sheet, saved URLs can be seen in the options page.
+7. Click on the extension icon to save the URL and Title of the current tab; saved URLs can be seen in the options page.
