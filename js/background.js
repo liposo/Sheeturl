@@ -6,19 +6,17 @@ chrome.runtime.onInstalled.addListener(function() {
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-  var url = tab.url;
-  var title = tab.title;
+  var url = escape(tab.url);
+  var title = escape(tab.title);
 
   insertUrl =
     gScriptUrl +
     "?action=insert&title=" +
-    escape(title) +
+    title +
     "&url=" +
-    escape(url) +
+    url +
     "&sheetUrl=" +
-    localStorage["sheetUrl"] +
-    "&sheetName=" +
-    localStorage["sheetName"];
+    localStorage["sheetUrl"];
 
   insert();
 });

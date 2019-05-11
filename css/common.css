@@ -56,13 +56,14 @@ button.ghost {
   border-color: #ffffff;
 }
 
-input {
+input, select {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
 }
+
 
 .container {
   display: flex;

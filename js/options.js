@@ -5,17 +5,15 @@ var gScriptUrl =
 
 window.addEventListener("load", function() {
   if (
-    localStorage["sheetUrl"] &&
-    localStorage["sheetName"]
+    localStorage["sheetUrl"]
   ) {
-    document.getElementById("sheetUrl").value = localStorage["sheetUrl"];
-    document.getElementById("sheetName").value = localStorage["sheetName"];
+    document.getElementById("sheetUrl").value = unescape(localStorage["sheetUrl"]);
 
     read();
   } else {
     var message = document.createElement("p");
     message.setAttribute("id", "alert-message");
-    message = "URL or sheet name are missing";
+    message = "URL are missing";
 
     document.querySelector(".inputs").append(message);
   }
@@ -37,10 +35,8 @@ async function read() {
   var readUrl =
     gScriptUrl +
     "?action=read&sheetUrl=" +
-    localStorage["sheetUrl"] +
-    "&sheetName=" +
-    localStorage["sheetName"];
-
+    localStorage["sheetUrl"];
+  
   let response = await fetch(readUrl);
   let body = await response.json();
 
