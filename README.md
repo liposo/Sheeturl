@@ -8,13 +8,10 @@ The story behind: I don't like to use my personal accounts at work and there are
 
 How to use this (at its current state):
 
-1. Download or clone this repository
-
+1. [Sheeturl - Chrome web store](https://chrome.google.com/webstore/detail/sheeturl/mefhmohbajnhdfjnfjmemdnhoabfgcmb)
 2. Create a Google sheet and share it, make the permissions like in the image
     ![alt text][logo]
 
     [logo]: assets/img/link-sharing.png "Link-sharing"
-
-6. Go to Chome > Extensions (chrome://extensions/) and enable developer mode, click on Load unpacked and select the folder of this repository.
 
 7. Click on the extension icon to save the URL and Title of the current tab; saved URLs can be seen in the options page.
